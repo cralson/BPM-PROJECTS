@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:organization xmlns:ns0="http://xmlns.oracle.com/bpm/organization" xmlns:ns1="http://xmlns.oracle.com/bpm/lpg/peopleQuery" xmlns:ns3="http://xmlns.oracle.com/bpm/identity" xmlns:ns2="http://xmlns.oracle.com/bpel/workflow/taskQuery" xmlns:ns4="http://xmlns.oracle.com/bpel/workflow/task">
+   <ns0:updateExistingObjects>false</ns0:updateExistingObjects>
+   <ns0:organizationalUnits>
+      <ns0:organizationalUnit>
+         <ns0:organizationalUnitId>MY Loan Company </ns0:organizationalUnitId>
+         <ns0:organizationalUnitName>My Loan Company </ns0:organizationalUnitName>
+      </ns0:organizationalUnit>
+      <ns0:organizationalUnit>
+         <ns0:organizationalUnitId>Sales and Marketing </ns0:organizationalUnitId>
+         <ns0:organizationalUnitName>Sales and Marketing </ns0:organizationalUnitName>
+      </ns0:organizationalUnit>
+   </ns0:organizationalUnits>
+   <ns0:applicationRoles>
+      <ns0:applicationRole id="Essentials Exam Project.ProcessOwner" isProcessRole="true">
+         <ns3:name>Essentials Exam Project.Process Owner</ns3:name>
+         <ns0:processRole id="ProcessOwner" name="Process Owner"/>
+      </ns0:applicationRole>
+      <ns0:applicationRole id="Essentials Exam Project.ProcessReviewer" isProcessRole="true">
+         <ns3:name>Essentials Exam Project.Process Reviewer</ns3:name>
+         <ns0:processRole id="ProcessReviewer" name="Process Reviewer"/>
+      </ns0:applicationRole>
+      <ns0:applicationRole id="Essentials Exam Project.LoanProcessor" isProcessRole="true">
+         <ns3:name>Essentials Exam Project.LoanProcessor</ns3:name>
+         <ns0:processRole id="LoanProcessor" name="LoanProcessor"/>
+      </ns0:applicationRole>
+      <ns0:applicationRole id="Essentials Exam Project.LoanOfficer" isProcessRole="true">
+         <ns3:name>Essentials Exam Project.LoanOfficer</ns3:name>
+         <ns0:processRole id="LoanOfficer" name="LoanOfficer"/>
+      </ns0:applicationRole>
+      <ns0:applicationRole id="Essentials Exam Project.UnderWritter" isProcessRole="true">
+         <ns3:name>Essentials Exam Project.UnderWritter</ns3:name>
+         <ns0:processRole id="UnderWritter" name="UnderWritter"/>
+      </ns0:applicationRole>
+   </ns0:applicationRoles>
+   <ns0:applicationRoleOrgUnitCalendarAssociations/>
+   <ns0:participantPropertiesList/>
+   <ns0:holidayRules/>
+   <ns0:calendarRules/>
+   <ns0:businessParameters>
+      <ns0:businessParameter>
+         <ns0:name>WORKING_HOURS</ns0:name>
+         <ns0:id>07506054-7ef6-42b7-b39a-2f888bb93564</ns0:id>
+         <ns0:type>Int</ns0:type>
+         <ns0:value>8</ns0:value>
+      </ns0:businessParameter>
+   </ns0:businessParameters>
+</ns0:organization>

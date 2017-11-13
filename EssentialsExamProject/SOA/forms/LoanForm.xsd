@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://www.frevvo.com/schemas/__stagMR_Eeeu6dGXcVmskw"
+            xmlns:frevvo="http://www.frevvo.com/appinfo"
+            targetNamespace="http://www.frevvo.com/schemas/__stagMR_Eeeu6dGXcVmskw">
+   <xsd:element name="LoanForm" type="LoanFormType">
+      <xsd:annotation>
+         <xsd:appinfo>
+            <frevvo:displaytype/>
+         </xsd:appinfo>
+      </xsd:annotation>
+   </xsd:element>
+   <xsd:complexType name="LoanFormType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="BorrowerName" type="xsd:string">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>Text</frevvo:displaytype>
+                  <frevvo:label>Borrower Name</frevvo:label>
+               </xsd:appinfo>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="MaritalStatus" type="MaritalStatusType">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>Radio</frevvo:displaytype>
+                  <frevvo:label>Marital Status</frevvo:label>
+                  <frevvo:itemLabel>Married</frevvo:itemLabel>
+                  <frevvo:itemLabel>Single</frevvo:itemLabel>
+               </xsd:appinfo>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="Phone" type="xsd:date">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>Date</frevvo:displaytype>
+                  <frevvo:label>Date Of Birth</frevvo:label>
+               </xsd:appinfo>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="PhoneNumber">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>Phone</frevvo:displaytype>
+                  <frevvo:label>Phone Number</frevvo:label>
+               </xsd:appinfo>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:pattern value="\d{10}"/>
+                  <xsd:pattern value="\d{3}-\d{4}"/>
+                  <xsd:pattern value="\d{3}\.\d{4}"/>
+                  <xsd:pattern value="\d{3}-\d{3}-\d{4}"/>
+                  <xsd:pattern value="\d{3}\.\d{3}\.\d{4}"/>
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="SocialSecurityNumber" type="xsd:string">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>Text</frevvo:displaytype>
+                  <frevvo:label>Social Security Number</frevvo:label>
+               </xsd:appinfo>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="State" type="StateType">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>Dropdown</frevvo:displaytype>
+                  <frevvo:label>State</frevvo:label>
+                  <frevvo:itemLabel>Gauteng</frevvo:itemLabel>
+                  <frevvo:itemLabel>Limpopo</frevvo:itemLabel>
+                  <frevvo:itemLabel>Durban</frevvo:itemLabel>
+               </xsd:appinfo>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="zipCode" type="xsd:string">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>Text</frevvo:displaytype>
+                  <frevvo:label>Zip Code</frevvo:label>
+               </xsd:appinfo>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="LoanAmount">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>Money</frevvo:displaytype>
+                  <frevvo:label>Loan Amount</frevvo:label>
+               </xsd:appinfo>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:double"/>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="InterestRates">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>Number</frevvo:displaytype>
+                  <frevvo:label>Interest Rate</frevvo:label>
+               </xsd:appinfo>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:double"/>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="NumberOfMonths" type="xsd:integer">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>Quantity</frevvo:displaytype>
+                  <frevvo:label>Number Of Months</frevvo:label>
+               </xsd:appinfo>
+            </xsd:annotation>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:simpleType name="StateType">
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="Option_1"/>
+         <xsd:enumeration value="Option_2"/>
+         <xsd:enumeration value="Option_3"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="MaritalStatusType">
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="Option 1"/>
+         <xsd:enumeration value="Option 2"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+</xsd:schema>

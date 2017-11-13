@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<properties>
+   <entry key="AG}-575fda3a:15f9bc7b879:-7bb5">Between 10000 and 30000</entry>
+   <entry key="AG}-575fda3a:15f9bc7b879:-7bb6">Less than 10000</entry>
+   <entry key="AG}-575fda3a:15f9bc7b879:-7be6">DecisionService</entry>
+   <entry key="AG}-575fda3a:15f9bc7b879:-7bb3">Between 30000 and 50000</entry>
+   <entry key="AG}-575fda3a:15f9bc7b879:-7bb4">Greater than or equal to 50000.0 </entry>
+   <entry key="AG}-575fda3a:15f9bc7b879:-7bb7">Loan Amount</entry>
+   <entry key="AG}-575fda3a:15f9bc7b879:-7baf">Credit Rating</entry>
+</properties>

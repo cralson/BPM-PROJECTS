@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/bpm/webform/formsData/loanForm" targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified">
+   <import namespace="http://xmlns.oracle.com/bpm/webform/formsData/loanForm" schemaLocation="../forms/data/LoanForm.xsd"/><element name="HumanTaskPayload" type="tns:CaptureLoanTaskPayloadType"><annotation><appinfo><globalElement xmlns="http://www.frevvo.com/appinfo">true</globalElement></appinfo></annotation></element><complexType name="CaptureLoanTaskPayloadType">
+      <sequence><element name="LoanForm" type="ns0:LoanFormBOType"/></sequence>
+   </complexType>
+</schema>

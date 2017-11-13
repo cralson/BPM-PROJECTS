@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<decisionServices xmlns="http://xmlns.oracle.com/bpel/rules" name="CreditRules">
+    <ruleEngineProvider provider="Oracle_11.0.0.0.0" name="OracleRulesSDK">
+        <repository type="SCA-Archive">
+            <path>Essentials_Exam_Project/oracle/rules/essentialsexamp/CreditRules.rules</path>
+        </repository>
+    </ruleEngineProvider>
+    <decisionService name="CreditRules_DecisionService_1" ruleEngineProviderReference="OracleRulesSDK" targetNamespace="http://xmlns.oracle.com/CreditRules/CreditRules_DecisionService_1">
+        <catalog>CreditRules</catalog>
+        <pattern name="CallFunctionStateless">
+            <arguments>
+                <call>essentialsexamp.CreditRules.DecisionService</call>
+            </arguments>
+        </pattern>
+        <pattern name="CallFunctionStateful">
+            <arguments>
+                <call>essentialsexamp.CreditRules.DecisionService</call>
+            </arguments>
+        </pattern>
+    </decisionService>
+    <schemaInformation>
+        <dictionary fqnPackage="essentialsexamp" fqnName="CreditRules" updateNumber="141">
+            <schemaBrowser>
+                <package>com.oracle.xmlns.bpm.bpmobject.businessdata.ruleinput</package>
+                <namespace>http://xmlns.oracle.com/bpm/bpmobject/BusinessData/RuleInput</namespace>
+            </schemaBrowser>
+            <schemaBrowser>
+                <package>com.oracle.xmlns.bpm.bpmobject.businessdata.ruleoutput</package>
+                <namespace>http://xmlns.oracle.com/bpm/bpmobject/BusinessData/RuleOutput</namespace>
+            </schemaBrowser>
+            <schemaImport namespace="http://xmlns.oracle.com/bpm/bpmobject/BusinessData/RuleInput" localPart="RuleInput.xsd" schemaLocation="businessCatalog/BusinessData/RuleInput.xsd">
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/BusinessData/RuleInput" localPart="RuleInput.xsd" schemaLocation="businessCatalog/BusinessData/RuleInput.xsd"/>
+            </schemaImport>
+            <schemaImport namespace="http://xmlns.oracle.com/bpm/bpmobject/BusinessData/RuleOutput" localPart="RuleOutput.xsd" schemaLocation="businessCatalog/BusinessData/RuleOutput.xsd">
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/BusinessData/RuleOutput" localPart="RuleOutput.xsd" schemaLocation="businessCatalog/BusinessData/RuleOutput.xsd"/>
+            </schemaImport>
+        </dictionary>
+    </schemaInformation>
+</decisionServices>

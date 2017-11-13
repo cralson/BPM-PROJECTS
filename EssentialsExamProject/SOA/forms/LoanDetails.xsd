@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://www.frevvo.com/schemas/_GRbjQMOlEeeHDMh_GLH5Rg"
+            xmlns:frevvo="http://www.frevvo.com/appinfo"
+            targetNamespace="http://www.frevvo.com/schemas/_GRbjQMOlEeeHDMh_GLH5Rg">
+   <xsd:element name="LoanDetails" type="LoanDetailsType">
+      <xsd:annotation>
+         <xsd:appinfo>
+            <frevvo:displaytype/>
+         </xsd:appinfo>
+      </xsd:annotation>
+   </xsd:element>
+   <xsd:complexType name="LoanDetailsType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="FullNames" type="xsd:string">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>Text</frevvo:displaytype>
+                  <frevvo:label>Full Names</frevvo:label>
+               </xsd:appinfo>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="Surname" type="xsd:string">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>Text</frevvo:displaytype>
+                  <frevvo:label>Surname</frevvo:label>
+               </xsd:appinfo>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="Phone">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>Phone</frevvo:displaytype>
+                  <frevvo:label>Phone</frevvo:label>
+               </xsd:appinfo>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:pattern value="\d{10}"/>
+                  <xsd:pattern value="\d{3}-\d{4}"/>
+                  <xsd:pattern value="\d{3}\.\d{4}"/>
+                  <xsd:pattern value="\d{3}-\d{3}-\d{4}"/>
+                  <xsd:pattern value="\d{3}\.\d{3}\.\d{4}"/>
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="Email">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>EMail</frevvo:displaytype>
+                  <frevvo:label>Email</frevvo:label>
+               </xsd:appinfo>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:pattern value="[a-zA-Z0-9\-_][a-zA-Z0-9\-\+_]*(\.[a-zA-Z0-9\-\+_]+)*@([a-zA-Z0-9\-_]+\.)+[a-zA-Z]{2,6}"/>
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="loanType" type="loanTypeType">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>Dropdown</frevvo:displaytype>
+                  <frevvo:label>Loan Type</frevvo:label>
+                  <frevvo:itemLabel>Home Loan</frevvo:itemLabel>
+                  <frevvo:itemLabel>Car Loan</frevvo:itemLabel>
+                  <frevvo:itemLabel>Study Loan</frevvo:itemLabel>
+               </xsd:appinfo>
+            </xsd:annotation>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="AccountNumber">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>Number</frevvo:displaytype>
+                  <frevvo:label>Account Number</frevvo:label>
+               </xsd:appinfo>
+            </xsd:annotation>
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:double"/>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="Address" type="xsd:string">
+            <xsd:annotation>
+               <xsd:appinfo>
+                  <frevvo:displaytype>TextArea</frevvo:displaytype>
+                  <frevvo:label>Address</frevvo:label>
+               </xsd:appinfo>
+            </xsd:annotation>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:simpleType name="loanTypeType">
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="Option_1"/>
+         <xsd:enumeration value="Option_2"/>
+         <xsd:enumeration value="Option_3"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+</xsd:schema>

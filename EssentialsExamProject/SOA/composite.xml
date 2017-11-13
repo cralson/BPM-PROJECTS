@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<composite xmlns="http://xmlns.oracle.com/sca/1.0" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:ns5="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:ns7="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:ns6="http://xmlns.oracle.com/sca/1.0-ext" xmlns:ns2="http://schemas.oracle.com/events/edl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy" xmlns:ui="http://xmlns.oracle.com/soa/designer/" name="Essentials_Exam_Project" revision="1.0" label="2017-11-06_02-15-33_118" mode="active" state="on">
+   <import location="LoanRule_DecisionService.wsdl" importType="wsdl" namespace="http://xmlns.oracle.com/LoanRule/LoanRule_DecisionService"/>
+   <import location="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl" importType="wsdl" namespace="http://xmlns.oracle.com/bpel/workflow/taskService"/>
+   <import location="WSDLs/CreditRules_DecisionService_1.wsdl" importType="wsdl" namespace="http://xmlns.oracle.com/CreditRules/CreditRules_DecisionService_1"/>
+   <import location="WSDLs/CreditRatingProcess.wsdl" importType="wsdl" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/CreditRatingProcess"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/file/ExamApplication/EssentialsExamProject/DisburseLoan"
+           location="WSDLs/DisburseLoan.wsdl" importType="wsdl"/>
+   <service name="CreditRatingProcess.service" ui:wsdlLocation="WSDLs/CreditRatingProcess.wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/CreditRatingProcess#wsdl.interface(CreditRatingProcessPortType)" callbackInterface="http://xmlns.oracle.com/bpmn/bpmnProcess/CreditRatingProcess#wsdl.interface(CreditRatingProcessPortTypeCallBack)"/>
+      <binding.ws port="http://xmlns.oracle.com/bpmn/bpmnProcess/CreditRatingProcess#wsdl.endpoint(CreditRatingProcess.service/CreditRatingProcessPortType)"/>
+      <callback>
+         <binding.ws port="http://xmlns.oracle.com/bpmn/bpmnProcess/CreditRatingProcess#wsdl.endpoint(CreditRatingProcess.service/CreditRatingProcessPortTypeCallBack)"/>
+      </callback>
+   </service>
+   <component name="LoanApplication">
+      <implementation.bpmn src="processes/LoanApplication.bpmn"/>
+      <componentType>
+         <reference name="HumanTasks.CaptureLoanTask.reference" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </reference>
+         <reference name="HumanTasks.ReviewLoanTask.reference" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </reference>
+         <reference name="HumanTasks.UnderwriterTask.reference" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </reference>
+         <reference name="Rules.Essentialsexamp.CreditRules.DecisionService.reference" ui:wsdlLocation="WSDLs/CreditRules_DecisionService_1.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/CreditRules/CreditRules_DecisionService_1#wsdl.interface(IDecisionService)"/>
+         </reference>
+         <reference name="CreditRatingProcess.reference" ui:wsdlLocation="WSDLs/CreditRatingProcess.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/CreditRatingProcess#wsdl.interface(CreditRatingProcessPortType)" callbackInterface="http://xmlns.oracle.com/bpmn/bpmnProcess/CreditRatingProcess#wsdl.interface(CreditRatingProcessPortTypeCallBack)"/>
+         </reference>
+         <reference name="Services.Externals.DisburseLoan.reference" ui:wsdlLocation="WSDLs/DisburseLoan.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/ExamApplication/EssentialsExamProject/DisburseLoan#wsdl.interface(Write_ptt)"/>
+         </reference>
+      </componentType>
+      <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string" many="false">sync</property>
+      <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
+   </component>
+   <component name="LoanRule">
+      <implementation.decision src="LoanRule.decs"/>
+      <componentType>
+         <service name="LoanRule_DecisionService" ui:wsdlLocation="LoanRule_DecisionService.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/LoanRule/LoanRule_DecisionService#wsdl.interface(IDecisionService)"/>
+         </service>
+      </componentType>
+   </component>
+   <component name="CaptureLoanTask">
+      <implementation.workflow src="HumanTasks/CaptureLoanTask.task"/>
+      <componentType>
+         <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </service>
+      </componentType>
+   </component>
+   <component name="ReviewLoanTask">
+      <implementation.workflow src="HumanTasks/ReviewLoanTask.task"/>
+      <componentType>
+         <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </service>
+      </componentType>
+   </component>
+   <component name="UnderwriterTask">
+      <implementation.workflow src="HumanTasks/UnderwriterTask.task"/>
+      <componentType>
+         <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </service>
+      </componentType>
+   </component>
+   <component name="CreditRules">
+      <implementation.decision src="CreditRules.decs"/>
+      <componentType>
+         <service name="CreditRules_DecisionService_1" ui:wsdlLocation="WSDLs/CreditRules_DecisionService_1.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/CreditRules/CreditRules_DecisionService_1#wsdl.interface(IDecisionService)"/>
+         </service>
+      </componentType>
+   </component>
+   <component name="CreditRatingProcess">
+      <implementation.bpmn src="processes/CreditRatingProcess.bpmn"/>
+      <componentType>
+         <service name="CreditRatingProcess.service" ui:wsdlLocation="WSDLs/CreditRatingProcess.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/CreditRatingProcess#wsdl.interface(CreditRatingProcessPortType)" callbackInterface="http://xmlns.oracle.com/bpmn/bpmnProcess/CreditRatingProcess#wsdl.interface(CreditRatingProcessPortTypeCallBack)"/>
+            <property name="bpm.generated.service.reference" type="xs:string" many="false">CreditRatingProcess.service</property>
+         </service>
+      </componentType>
+   </component>
+   <reference name="DisburseLoan" ui:wsdlLocation="WSDLs/DisburseLoan.wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/ExamApplication/EssentialsExamProject/DisburseLoan#wsdl.interface(Write_ptt)"/>
+      <binding.jca config="Adapters/DisburseLoan_file.jca"/>
+   </reference>
+   <wire>
+      <source.uri>LoanApplication/HumanTasks.CaptureLoanTask.reference</source.uri>
+      <target.uri>CaptureLoanTask/TaskService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>LoanApplication/HumanTasks.ReviewLoanTask.reference</source.uri>
+      <target.uri>ReviewLoanTask/TaskService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>LoanApplication/HumanTasks.UnderwriterTask.reference</source.uri>
+      <target.uri>UnderwriterTask/TaskService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>LoanApplication/Rules.Essentialsexamp.CreditRules.DecisionService.reference</source.uri>
+      <target.uri>CreditRules/CreditRules_DecisionService_1</target.uri>
+   </wire>
+   <wire>
+      <source.uri>CreditRatingProcess.service</source.uri>
+      <target.uri>CreditRatingProcess/CreditRatingProcess.service</target.uri>
+   </wire>
+   <wire>
+      <source.uri>LoanApplication/CreditRatingProcess.reference</source.uri>
+      <target.uri>CreditRatingProcess/CreditRatingProcess.service</target.uri>
+   </wire>
+   <wire>
+      <source.uri>LoanApplication/Services.Externals.DisburseLoan.reference</source.uri>
+      <target.uri>DisburseLoan</target.uri>
+   </wire>
+</composite>

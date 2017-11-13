@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/bpm/webform/form" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/bpm/webform/form">
+    <element name="BusinessObjects" type="tns:LoanDetailsBusinessObjectsType">
+        <annotation>
+            <appinfo>
+                <globalElement xmlns="http://www.frevvo.com/appinfo">true</globalElement>
+            </appinfo>
+        </annotation>
+    </element>
+    <complexType name="LoanDetailsBusinessObjectsType">
+        <sequence>
+        </sequence>
+    </complexType>
+</schema>

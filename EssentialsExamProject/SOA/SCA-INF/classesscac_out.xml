@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>error</severity>
+      <loc>/ns:composite/ns:import[@location='LoanRule_DecisionService.wsdl']</loc>
+      <line>3</line>
+      <col>142</col>
+      <file>/export/home/oracle/product/Middleware/bpm12cr2ent/Oracle_Home/jdeveloper/jdev/bin/mywork/ExamADFApplication/ExamApplication/EssentialsExamProject/SOA/composite.xml</file>
+      <name>/export/home/oracle/product/Middleware/bpm12cr2ent/Oracle_Home/jdeveloper/jdev/bin/mywork/ExamADFApplication/ExamApplication/EssentialsExamProject/SOA/composite.xml</name>
+      <fix/>
+      <msg>Load of wsdl "LoanRule_DecisionService.wsdl" failed</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc>/ns:composite/ns:component[@name='LoanRule']</loc>
+      <line>41</line>
+      <col>31</col>
+      <file>/export/home/oracle/product/Middleware/bpm12cr2ent/Oracle_Home/jdeveloper/jdev/bin/mywork/ExamADFApplication/ExamApplication/EssentialsExamProject/SOA/composite.xml</file>
+      <name>/export/home/oracle/product/Middleware/bpm12cr2ent/Oracle_Home/jdeveloper/jdev/bin/mywork/ExamADFApplication/ExamApplication/EssentialsExamProject/SOA/composite.xml</name>
+      <fix/>
+      <msg>Cannot find Port Type "{http://xmlns.oracle.com/LoanRule/LoanRule_DecisionService}IDecisionService" for "LoanRule_DecisionService" in WSDL Manager</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/ns:composite/ns:component[@name='LoanRule/LoanRule_DecisionService']</loc>
+      <line/>
+      <col/>
+      <file>/export/home/oracle/product/Middleware/bpm12cr2ent/Oracle_Home/jdeveloper/jdev/bin/mywork/ExamADFApplication/ExamApplication/EssentialsExamProject/SOA/composite.xml</file>
+      <name>/export/home/oracle/product/Middleware/bpm12cr2ent/Oracle_Home/jdeveloper/jdev/bin/mywork/ExamADFApplication/ExamApplication/EssentialsExamProject/SOA/composite.xml</name>
+      <fix/>
+      <msg>The service "LoanRule_DecisionService" exposed by component "LoanRule" is not wired to/used by any other component.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/ReviewLoanTask.task</file>
+      <name>HumanTasks/ReviewLoanTask.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/CaptureLoanTask.task</file>
+      <name>HumanTasks/CaptureLoanTask.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>/export/home/oracle/product/Middleware/bpm12cr2ent/Oracle_Home/jdeveloper/jdev/bin/mywork/ExamADFApplication/ExamApplication/EssentialsExamProject/SOA/processes/CreditRatingProcess.bpmn</file>
+      <name>/export/home/oracle/product/Middleware/bpm12cr2ent/Oracle_Home/jdeveloper/jdev/bin/mywork/ExamADFApplication/ExamApplication/EssentialsExamProject/SOA/processes/CreditRatingProcess.bpmn</name>
+      <fix/>
+      <msg>Node 'Credit Rating' has no implementation defined</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file/>
+      <name/>
+      <fix/>
+      <msg>The conversation CreditRatingWebService: [Define Interface] is not being used by any conversational node</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/UnderwriterTask.task</file>
+      <name>HumanTasks/UnderwriterTask.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+</Faults>

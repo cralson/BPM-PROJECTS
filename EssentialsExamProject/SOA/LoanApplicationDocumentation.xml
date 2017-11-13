@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="12.1.3" fileRevision="20120601"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+   <component name="LoanApplication">
+      <topicDocumentations>
+         <topicDocumentation name="LoanApplication">
+            <labels>
+               <label locale="en">LoanApplication</label>
+            </labels>
+            <descriptions>
+               <description locale="en">This Is a loan Application project. Includes receiving and processing loan Application </description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="USER_TASK_1509971285620">
+            <labels>
+               <label locale="en">Capture Loan request</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="USER_TASK_1509971339121">
+            <labels>
+               <label locale="en">Review Loan Application</label>
+            </labels>
+            <descriptions>
+               <description locale="en">This Where all Loans Are Reviewed.</description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="BUSINESS_RULE_TASK_1509971934675">
+            <labels>
+               <label locale="en">Credit Rules</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="SERVICE_TASK_1509971959492">
+            <labels>
+               <label locale="en">Disburse Loan</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="USER_TASK_1509974724865">
+            <labels>
+               <label locale="en">Under Writter</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="SEND_TASK_1510223891470">
+            <labels>
+               <label locale="en">Credit Check Request</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="RECEIVE_TASK_1510223928301">
+            <labels>
+               <label locale="en">Credit Check Response</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT20837877392070">
+            <labels>
+               <label locale="en">Start</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT2083787739211">
+            <labels>
+               <label locale="en">End</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="END_EVENT_1509975070218">
+            <labels>
+               <label locale="en">Loan Rejected</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EXCLUSIVE_GATEWAY_1509971687636">
+            <labels>
+               <label locale="en">Review Outcome</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EXCLUSIVE_GATEWAY_1509974799444">
+            <labels>
+               <label locale="en">Underwriter review</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EXCLUSIVE_GATEWAY_1510053305165">
+            <labels>
+               <label locale="en">Routing</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf20837877392112"/>
+         <topicDocumentation name="sf_1509971285629"/>
+         <topicDocumentation name="sf_1509971339122"/>
+         <topicDocumentation name="sf_1509971687644"/>
+         <topicDocumentation name="sf_1509971707506">
+            <labels>
+               <label locale="en">Need More Details</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf_1509971954376"/>
+         <topicDocumentation name="sf_1509971959494"/>
+         <topicDocumentation name="sf_1509974724867"/>
+         <topicDocumentation name="sf_1509974799445">
+            <labels>
+               <label locale="en">Approved By Underwritter</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf_1509975073748">
+            <labels>
+               <label locale="en">Rejected By Underwritter</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf_1510053305168">
+            <labels>
+               <label locale="en"></label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="sf_1510053328432">
+            <labels>
+               <label locale="en">Automatically Approved</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf_1510053340156">
+            <labels>
+               <label locale="en">Automatically Rejected</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf_1510223891472"/>
+         <topicDocumentation name="sf_1510223928302"/>
+      </topicDocumentations>
+   </component>
+</processDocumentation>

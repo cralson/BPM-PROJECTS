@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:tns="http://xmlns.oracle.com/bpm/webform/formsData/loanDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="http://xmlns.oracle.com/bpm/webform/formsData/loanDetails" targetNamespace="http://xmlns.oracle.com/bpm/webform/formsData/loanDetails" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/" xmlns:ns0="http://www.frevvo.com/schemas/_GRbjQMOlEeeHDMh_GLH5Rg">
+    <xsd:import schemaLocation="../../forms/LoanDetails.xsd" namespace="http://www.frevvo.com/schemas/_GRbjQMOlEeeHDMh_GLH5Rg"/>
+    <xsd:complexType name="LoanDetailsBOType">
+        <xsd:sequence>
+            <xsd:element ref="ns0:LoanDetails" bpmo:name="form"/>
+        </xsd:sequence>
+    </xsd:complexType>
+<xsd:element name="LoanDetailsBO" type="LoanDetailsBOType"/>
+</xsd:schema>
